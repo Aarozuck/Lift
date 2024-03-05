@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>🚕   lift</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %} ">
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="#page-top" style="font-family: 'Archivo Black', sans-serif;">lift</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto text-uppercase">
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <style>
+      body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+      
+      .bg-image {
+        /* The image used */
+        background-image: url("{% static 'assets/img/images.jpeg' %}");
+        
+        /* Add the blur effect */
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        
+        /* Full height */
+        height: 100%; 
+        
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      
+      /* Position text in the middle of the page/image */
+      .bg-text {
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+        color: Black;
+        font-weight: bold;
+        border: 2px solid #f1f1f1;
+        border-bottom: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+      
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #F9BC61;
+      overflow: hidden;
+      font-family: "Roboto";
+    }
+    
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      align-self: center;
+      height: auto;
+      width: 350px;
+      background: linear-gradient(#F9BC61, #FDE8C9);
+      box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+      border-radius: 8px;
+    }
+    
+    .content {
+      display: flex;
+      flex-direction: column;
+      height: 88%;
+      width: 88%;
+      background-color: white;
+      border-radius: 8px;
+    }
+    
+    .content > .top {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 20%;
+      background-color: white;
+      
+      p {
+        font-weight: bold;
+        font-size: 12px;
+      }
+      
+      .color {
+        height: 20px;
+        width: 20px;
+        margin-left: 5px;
+        margin-right: 10px;
+        border-radius: 50%;
+        background-color: orange;
+      }
+    }
+    
+    .content > .middle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40%;
+      background: linear-gradient(#F9BC61, #FDE8C9 75%);
+      padding-left: 15px;
+      padding-right: 15px;
+      
+      img {
+        width: 60%;
+      }
+      
+      div > p:first-child {
+        margin-bottom: 5px;
+        font-size: 12px;
+      }
+      
+      div > p:last-child {
+        margin: 0;
+        font-weight: bold;
+      }
+    }
+    
+    .content > .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40%;
+      padding-left: 30px;
+      padding-right: 30px;
+      
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        p:first-child {
+          font-weight: bold;
+        }
+      }
+    }</style>
+    
+      </style>
+      </head>
+      <body>
+      
+      <div class="bg-image"></div>
+      
+      <div class="bg-text">
+        {% block content %}
+        {% endblock %}
+      </div> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+   
+    <section id="contact" style="background-image:url('{% static 'assets/img/map-image.png' %} ');"></section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">Copyright&nbsp;© Brand 2024</span></div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+    
+    <script src=" {% static 'assets/js/jquery.min.js' %} "></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src=" {% static 'assets/js/agency.js' %} "></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to the Transport App!</h1>
+
+
+    {% if user.is_authenticated and user.is_driver %}
+      <li><a href="{% url 'driver-profile' user.id %}" class="button">Driver Profile</a></li>
+    {% elif user.is_authenticated and user.is_rider %}
+      <li><a href="{% url 'rider-profile' user.id %}" class="button" >Rider Profile</a></li>
+    {% endif %}
+
+
+
+<h2>Approved Drivers</h2>
+{% if drivers %}
+  {% for driver in drivers %}
+    <div class="driver-card">
+      <h3>{{ driver.full_name }}</h3>
+      <p>Current Location: {{ driver.current_location }}</p>
+      <p>Status: {% if driver.online_status %}Online{% else %}Offline{% endif %}</p>
+      {% if user.is_authenticated and user.is_rider %}
+        <button onclick="requestRide({{ driver.id }})">Request Ride</button>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% else %}
+  <p>No approved drivers found.</p>
+{% endif %}
+
+<script>
+  function requestRide(driverId) {
+    // Implement your logic to handle the request ride button click
+    alert("Request ride to driver with ID: " + driverId);
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Driver Profile</h1>
+<h2>Driver Information</h2>
+<p>Full Name: {{ driver.full_name }}</p>
+<p>Vehicle Type: {{ driver.get_vehicle_type_display }}</p>
+<p>Address: {{ driver.get_address_display }}</p>
+<p>Phone Number: {{ driver.phone_number }}</p>
+<p>License Plate: {{ driver.license_plate }}</p>
+
+
+<p>Current Location: {{ driver.current_location }}</p>
+<p>Status: {% if driver.online_status %}Online{% else %}Offline{% endif %}</p>
+
+<!-- driver_profile.html -->
+{% for ride_request in ride_requests %}
+  <h2>{{ ride_request.rider.user.get_full_name }}</h2>
+  <!-- Display other ride request details -->
+  <form method="post" action="{% url 'accept-ride-request' ride_request.id %}">
+    {% csrf_token %}
+    <button type="submit">Accept</button>
+  </form>
+  <form method="post" action="{% url 'decline-ride-request' ride_request.id %}">
+    {% csrf_token %}
+    <button type="submit">Decline</button>
+  </form>
+  <hr>
+{% empty %}
+  <p>No ride requests.</p>
+{% endfor %}
+
+<a href="{% url 'update-driver-info' %}">update</a>
+<a href="{% url 'driver-home' %}">home</a>
+{% endblock %}

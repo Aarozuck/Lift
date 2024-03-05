@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to Lift</h1>
+<p>Please select your role:</p>
+<a href="{% url 'driver_login' %}">Driver</a>
+<a href="{% url 'rider_login' %}">Rider</a>
+{% endblock %}

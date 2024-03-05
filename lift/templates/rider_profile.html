@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Rider Profile</h1>
+
+    <p>Full Name: {{ rider.full_name }}</p>
+    <p>Address: {{ rider.address }}</p>
+    <p>Phone Number: {{ rider.phone_number }}</p>
+
+    {% for ride_request in ride_requests %}
+    <h2>{{ ride_request.driver.user.get_full_name }}</h2>
+
+    {% if ride_request.accepted %}
+      <p>Accepted by: {{ ride_request.driver.user.get_full_name }}</p>
+      <p>Driver's Phone Number: {{ ride_request.driver.user.phone_number }}</p>
+    {% endif %}
+    <hr>
+      {% empty %}
+    <p>No ride requests.</p>
+    {% endfor %}
+    <a href="{% url 'rider-home' %}">home</a>
+{% endblock %}
